@@ -3,113 +3,203 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f3ed">
-  <meta name="description" content="A little celebration of love. Wedding details coming soon.">
-  <title>Our Wedding</title>
+  <meta name="theme-color" content="#f6f2e9">
+  <meta name="description" content="Join us in Puducherry for our wedding celebrations on 17 and 18 March 2027.">
+  <title>Our Wedding | 17–18 March 2027</title>
   <style>
     :root {
       color-scheme: light;
-      --ink: #3e493e;
-      --muted: #73796e;
-      --paper: #f7f3ed;
-      --accent: #a56d5c;
-      --line: #ded8ce;
+      --paper: #f6f2e9;
+      --paper-deep: #ece5d8;
+      --ink: #344438;
+      --muted: #74796d;
+      --accent: #a56d58;
+      --line: #d9d0c1;
+      --white: #fffdf8;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 28px;
       background: var(--paper);
       color: var(--ink);
       font-family: Georgia, 'Times New Roman', serif;
+      -webkit-font-smoothing: antialiased;
     }
-    main {
+    a { color: inherit; }
+    .page-shell { width: min(100% - 32px, 920px); margin: 28px auto; }
+    .hero {
       position: relative;
-      width: min(100%, 760px);
-      min-height: 620px;
-      display: grid;
-      align-content: center;
-      justify-items: center;
-      padding: 70px 28px;
+      overflow: hidden;
+      min-height: 660px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 76px 28px 64px;
       text-align: center;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.36);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.8), transparent 58%),
+        var(--white);
     }
-    main::before, main::after {
-      content: '✳';
+    .hero::before, .hero::after {
       position: absolute;
-      color: #b6a58d;
-      font-size: 24px;
+      color: #b9a88e;
+      font-size: 25px;
+      content: "✳";
     }
-    main::before { top: 24px; left: 26px; }
-    main::after { right: 26px; bottom: 24px; }
-    .eyebrow {
-      margin: 0 0 20px;
+    .hero::before { top: 25px; left: 27px; }
+    .hero::after { right: 27px; bottom: 25px; }
+    .eyebrow, .section-kicker {
+      margin: 0;
       color: var(--accent);
-      font: 600 11px/1.5 system-ui, sans-serif;
+      font: 600 11px/1.6 system-ui, sans-serif;
       letter-spacing: .24em;
       text-transform: uppercase;
     }
     h1 {
-      margin: 0;
-      font-size: clamp(54px, 11vw, 94px);
+      margin: 26px 0 0;
+      font-size: clamp(64px, 12vw, 112px);
       font-weight: 400;
-      letter-spacing: -.055em;
-      line-height: .98;
+      letter-spacing: -.065em;
+      line-height: .9;
     }
-    .ampersand {
-      display: block;
-      margin: 14px 0;
-      color: var(--accent);
-      font-size: 42px;
-      font-style: italic;
+    .ampersand { display: block; margin: 16px 0; color: var(--accent); font-size: 44px; font-style: italic; }
+    .hero-copy { max-width: 480px; margin: 18px 0 0; color: var(--muted); font-size: 18px; line-height: 1.7; }
+    .hero-date { margin: 34px 0 0; font: 600 12px/1.7 system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+    .ornament { width: 58px; height: 1px; margin: 26px auto; background: var(--accent); }
+    .countdown-section { padding: 58px 20px 62px; text-align: center; }
+    .countdown-section h2, .section-heading { margin: 12px 0 0; font-size: clamp(32px, 6vw, 46px); font-weight: 400; letter-spacing: -.035em; }
+    .countdown-note { margin: 12px 0 0; color: var(--muted); font: 13px/1.7 system-ui, sans-serif; }
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      width: min(100%, 620px);
+      margin: 34px auto 0;
     }
-    .intro {
-      max-width: 430px;
-      margin: 30px 0 0;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
+    .time-unit { padding: 22px 8px 18px; border: 1px solid var(--line); background: rgba(255,253,248,.58); }
+    .time-value { display: block; font-size: clamp(32px, 7vw, 52px); line-height: 1; font-variant-numeric: tabular-nums; }
+    .time-label { display: block; margin-top: 11px; color: var(--muted); font: 600 9px/1.4 system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+    .events { padding: 58px 26px 62px; background: var(--paper-deep); text-align: center; }
+    .event-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; width: min(100%, 720px); margin: 34px auto 0; }
+    .event-card { padding: 30px 22px; border: 1px solid #d5cabb; background: rgba(255,253,248,.68); }
+    .event-number { color: var(--accent); font: 600 10px/1.5 system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+    .event-card h3 { margin: 12px 0 8px; font-size: 30px; font-weight: 400; }
+    .event-date { margin: 0; font-size: 16px; }
+    .event-time { margin: 10px 0 0; color: var(--muted); font: 13px/1.7 system-ui, sans-serif; }
+    .venue { padding: 64px 22px 70px; text-align: center; }
+    .venue-name { max-width: 650px; margin: 16px auto 0; font-size: clamp(25px, 5vw, 36px); font-weight: 400; line-height: 1.25; }
+    .venue-address { max-width: 570px; margin: 16px auto 0; color: var(--muted); font: 14px/1.8 system-ui, sans-serif; }
+    .venue-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .link-button { display: inline-block; padding: 13px 19px; border: 1px solid var(--ink); text-decoration: none; font: 600 10px/1.4 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; transition: background .2s, color .2s; }
+    .link-button.primary { background: var(--ink); color: var(--white); }
+    .link-button:hover { background: var(--accent); border-color: var(--accent); color: white; }
+    footer { padding: 26px 15px 34px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font: 10px/1.7 system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+    @media (max-width: 560px) {
+      .page-shell { width: min(100% - 18px, 920px); margin: 9px auto; }
+      .hero { min-height: 590px; padding: 64px 20px 60px; }
+      .hero-copy { font-size: 16px; }
+      .countdown-section { padding: 48px 8px 52px; }
+      .countdown { gap: 7px; }
+      .time-unit { padding: 18px 4px 15px; }
+      .time-label { font-size: 8px; letter-spacing: .1em; }
+      .event-grid { grid-template-columns: 1fr; max-width: 390px; }
+      .events { padding-inline: 16px; }
     }
-    .divider {
-      width: 52px;
-      height: 1px;
-      margin: 34px 0 22px;
-      background: var(--accent);
-    }
-    .details {
-      margin: 0;
-      color: var(--ink);
-      font: 600 11px/1.7 system-ui, sans-serif;
-      letter-spacing: .19em;
-      text-transform: uppercase;
-    }
-    footer {
-      position: absolute;
-      bottom: 26px;
-      color: var(--muted);
-      font: 10px/1.5 system-ui, sans-serif;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-    @media (max-width: 480px) {
-      main { min-height: 570px; padding: 54px 20px; }
-      .intro { font-size: 16px; }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
-  <main>
-    <p class="eyebrow">A celebration of love</p>
-    <h1>Our<br>Wedding</h1>
-    <span class="ampersand" aria-hidden="true">&amp;</span>
-    <p class="intro">We’re so happy to share this special chapter with you. The date, names, and celebration details will be added here soon.</p>
-    <span class="divider" aria-hidden="true"></span>
-    <p class="details">Invitation details coming soon</p>
-    <footer>With love, always</footer>
-  </main>
+  <div class="page-shell">
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Together with our families</p>
+        <h1 id="page-title">Our<br>Wedding</h1>
+        <span class="ampersand" aria-hidden="true">&amp;</span>
+        <p class="hero-copy">With joyful hearts, we invite you to celebrate the beginning of our forever.</p>
+        <div class="ornament" aria-hidden="true"></div>
+        <p class="hero-date">17 &amp; 18 March 2027 · Puducherry</p>
+      </section>
+
+      <section class="countdown-section" aria-labelledby="countdown-title">
+        <p class="section-kicker">The big day</p>
+        <h2 id="countdown-title">Counting down to forever</h2>
+        <p class="countdown-note">The wedding ceremony begins on 18 March 2027 at 9:00 AM (IST).</p>
+        <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="Countdown to the wedding ceremony">
+          <div class="time-unit"><span class="time-value" id="days">---</span><span class="time-label">Days</span></div>
+          <div class="time-unit"><span class="time-value" id="hours">--</span><span class="time-label">Hours</span></div>
+          <div class="time-unit"><span class="time-value" id="minutes">--</span><span class="time-label">Minutes</span></div>
+          <div class="time-unit"><span class="time-value" id="seconds">--</span><span class="time-label">Seconds</span></div>
+        </div>
+        <p class="countdown-note" id="countdown-message">Every moment brings us closer.</p>
+      </section>
+
+      <section class="events" aria-labelledby="events-title">
+        <p class="section-kicker">Save the dates</p>
+        <h2 class="section-heading" id="events-title">Two days of celebration</h2>
+        <div class="event-grid">
+          <article class="event-card">
+            <p class="event-number">Day one</p>
+            <h3>Reception</h3>
+            <p class="event-date">Wednesday, 17 March 2027</p>
+            <p class="event-time">7:00 PM – 9:00 PM</p>
+          </article>
+          <article class="event-card">
+            <p class="event-number">Day two</p>
+            <h3>Marriage</h3>
+            <p class="event-date">Thursday, 18 March 2027</p>
+            <p class="event-time">9:00 AM</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="venue" aria-labelledby="venue-title">
+        <p class="section-kicker">The place</p>
+        <h2 class="section-heading" id="venue-title">Celebrate with us</h2>
+        <p class="venue-name">Shree Raja Rajeswari Thirumana Mandabam</p>
+        <p class="venue-address">No. 144, 100 Feet East Coast Road (ECR), Pakkamudayanpet, Lawspet, Puducherry – 605008, India</p>
+        <div class="venue-actions">
+          <a class="link-button primary" href="https://www.google.com/maps/search/?api=1&amp;query=Shree+Raja+Rajeswari+Thirumana+Mandabam%2C+Puducherry" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+          <a class="link-button" href="https://www.waze.com/live-map/directions/in/py/puducherry/shree-raja-rajeswari-thirumana-mandapam?to=place.ChIJi9u_MGxhUzoRC921SfbOVkc" target="_blank" rel="noopener noreferrer">Get directions</a>
+        </div>
+      </section>
+    </main>
+    <footer>We can't wait to celebrate with you · With love</footer>
+  </div>
+
+  <script>
+    (() => {
+      // 9:00 AM India Standard Time (UTC+05:30), 18 March 2027.
+      const weddingTime = new Date('2027-03-18T09:00:00+05:30').getTime();
+      const fields = {
+        days: document.getElementById('days'),
+        hours: document.getElementById('hours'),
+        minutes: document.getElementById('minutes'),
+        seconds: document.getElementById('seconds')
+      };
+      const message = document.getElementById('countdown-message');
+
+      function updateCountdown() {
+        const remaining = weddingTime - Date.now();
+
+        if (remaining <= 0) {
+          Object.values(fields).forEach((field) => { field.textContent = '00'; });
+          message.textContent = 'The celebration has begun. Today is the day!';
+          return;
+        }
+
+        const totalSeconds = Math.floor(remaining / 1000);
+        fields.days.textContent = String(Math.floor(totalSeconds / 86400)).padStart(3, '0');
+        fields.hours.textContent = String(Math.floor((totalSeconds % 86400) / 3600)).padStart(2, '0');
+        fields.minutes.textContent = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+        fields.seconds.textContent = String(totalSeconds % 60).padStart(2, '0');
+      }
+
+      updateCountdown();
+      window.setInterval(updateCountdown, 1000);
+    })();
+  </script>
 </body>
 </html>
