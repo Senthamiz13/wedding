@@ -8,7 +8,7 @@
   <title>நம் திருமணம் | 17–18 மார்ச் 2027</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;500;600;700&family=Catamaran:wght@400;500;600;700&family=Hind+Madurai:wght@400;500;600;700&family=Mukta+Malar:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&family=Tiro+Tamil:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
@@ -46,7 +46,20 @@
       font: 600 13px/1.4 var(--sans); transition: background .2s, color .2s;
     }
     .language-switch button[aria-pressed="true"] { background: var(--ink); color: white; }
-    .language-switch button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .language-switch button:focus-visible, a:focus-visible, .font-lab button:focus-visible, .font-lab summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .font-lab { margin: 0 0 14px; border: 1px solid var(--line); background: rgba(255,253,248,.82); }
+    .font-lab summary { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 13px 16px; cursor: pointer; color: var(--ink); font-size: 14px; }
+    .font-lab-hint { color: var(--muted); font: 12px/1.5 var(--sans); }
+    .font-lab-intro { margin: 0; padding: 0 16px 12px; color: var(--muted); font: 13px/1.8 var(--sans); }
+    .font-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0 12px 12px; }
+    .font-option { min-width: 0; padding: 13px; border: 1px solid var(--line); background: var(--white); }
+    .font-option.selected { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+    .font-option-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font: 12px/1.5 var(--sans); }
+    .font-option-meta span { color: var(--muted); }
+    .font-sample { min-height: 58px; margin: 13px 0; font-size: clamp(17px, 3vw, 21px); line-height: 1.8; }
+    .font-apply { width: 100%; padding: 8px 10px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; font: 600 12px/1.5 var(--sans); }
+    .font-option.selected .font-apply { background: var(--ink); border-color: var(--ink); color: white; }
+    .font-current { margin: 0; padding: 0 14px 13px; color: var(--muted); font: 12px/1.6 var(--sans); }
     .hero {
       position: relative; overflow: hidden; min-height: 620px;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -105,6 +118,8 @@
       .time-unit { padding: 17px 3px 14px; }
       .time-label { font-size: 11px; }
       .event-grid { grid-template-columns: 1fr; max-width: 390px; }
+      .font-options { grid-template-columns: 1fr; }
+      .font-option { padding: 12px; }
       .events { padding-inline: 15px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -121,6 +136,47 @@
         <button type="button" data-language="en" aria-pressed="false">English</button>
       </nav>
     </header>
+
+    <details class="font-lab">
+      <summary>
+        <span data-i18n="fontLabTitle">தமிழ் எழுத்துருக்களைப் பாருங்கள்</span>
+        <span class="font-lab-hint" data-i18n="fontLabHint">Try a style</span>
+      </summary>
+      <p class="font-lab-intro" data-i18n="fontLabIntro">ஒவ்வொரு எழுத்துருவையும் பார்த்து, பிடித்ததைத் தேர்ந்தெடுக்கலாம். தேர்வு செய்ததும் முழு அழைப்பிதழிலும் அது பயன்படுத்தப்படும்.</p>
+      <div class="font-options">
+        <article class="font-option" data-font-option="Noto Serif Tamil">
+          <div class="font-option-meta"><strong>Noto Serif Tamil</strong><span data-i18n="fontClassic">பாரம்பரியம்</span></div>
+          <p class="font-sample" style="font-family:'Noto Serif Tamil',serif">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
+          <button type="button" class="font-apply" data-font="Noto Serif Tamil" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
+        </article>
+        <article class="font-option" data-font-option="Arima">
+          <div class="font-option-meta"><strong>Arima</strong><span data-i18n="fontDecorative">அலங்காரமான</span></div>
+          <p class="font-sample" style="font-family:'Arima',cursive">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
+          <button type="button" class="font-apply" data-font="Arima" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
+        </article>
+        <article class="font-option" data-font-option="Hind Madurai">
+          <div class="font-option-meta"><strong>Hind Madurai</strong><span data-i18n="fontModern">நவீன எளிமை</span></div>
+          <p class="font-sample" style="font-family:'Hind Madurai',sans-serif">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
+          <button type="button" class="font-apply" data-font="Hind Madurai" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
+        </article>
+        <article class="font-option" data-font-option="Mukta Malar">
+          <div class="font-option-meta"><strong>Mukta Malar</strong><span data-i18n="fontVersatile">மென்மையான</span></div>
+          <p class="font-sample" style="font-family:'Mukta Malar',sans-serif">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
+          <button type="button" class="font-apply" data-font="Mukta Malar" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
+        </article>
+        <article class="font-option" data-font-option="Tiro Tamil">
+          <div class="font-option-meta"><strong>Tiro Tamil</strong><span data-i18n="fontLiterary">இலக்கிய நயம்</span></div>
+          <p class="font-sample" style="font-family:'Tiro Tamil',serif">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
+          <button type="button" class="font-apply" data-font="Tiro Tamil" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
+        </article>
+        <article class="font-option" data-font-option="Catamaran">
+          <div class="font-option-meta"><strong>Catamaran</strong><span data-i18n="fontClean">தெளிவான தோற்றம்</span></div>
+          <p class="font-sample" style="font-family:'Catamaran',sans-serif">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
+          <button type="button" class="font-apply" data-font="Catamaran" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
+        </article>
+      </div>
+      <p class="font-current" id="font-current" aria-live="polite">தற்போதைய எழுத்துரு: Noto Serif Tamil</p>
+    </details>
 
     <main>
       <section class="hero" aria-labelledby="page-title">
@@ -198,6 +254,11 @@
           venueAddress: 'எண் 144, 100 அடி கிழக்கு கடற்கரைச் சாலை (ECR), பாக்கமுடையன்பேட்டை, லாஸ்பேட்டை, புதுச்சேரி – 605008.',
           mapButton: 'கூகுள் வரைபடத்தில் பார்க்க', directionsButton: 'வழித்தடம்',
           footer: 'உங்கள் வருகையே எங்கள் மகிழ்ச்சி · அன்புடன்',
+          fontLabTitle: 'தமிழ் எழுத்துருக்களைப் பாருங்கள்', fontLabHint: 'எழுத்துரு தேர்வு',
+          fontLabIntro: 'ஒவ்வொரு எழுத்துருவையும் பார்த்து, பிடித்ததைத் தேர்ந்தெடுக்கலாம். தேர்வு செய்ததும் முழு அழைப்பிதழிலும் அது பயன்படுத்தப்படும்.',
+          fontClassic: 'பாரம்பரியம்', fontDecorative: 'அலங்காரமான', fontModern: 'நவீன எளிமை',
+          fontVersatile: 'மென்மையான', fontLiterary: 'இலக்கிய நயம்', fontClean: 'தெளிவான தோற்றம்',
+          fontUse: 'இந்த எழுத்துருவைப் பயன்படுத்து', fontCurrent: 'தற்போதைய எழுத்துரு',
           finished: 'திருமணக் கொண்டாட்டம் இனிதே தொடங்கிவிட்டது!'
         },
         en: {
@@ -217,6 +278,11 @@
           venueAddress: 'No. 144, 100 Feet East Coast Road (ECR), Pakkamudayanpet, Lawspet, Puducherry – 605008, India.',
           mapButton: 'View on Google Maps', directionsButton: 'Get directions',
           footer: 'Your presence is our happiness · With love',
+          fontLabTitle: 'Explore Tamil fonts', fontLabHint: 'Choose a style',
+          fontLabIntro: 'Preview each typeface and choose your favourite. Your selection will be applied across the invitation.',
+          fontClassic: 'Traditional', fontDecorative: 'Decorative', fontModern: 'Modern & clean',
+          fontVersatile: 'Soft & versatile', fontLiterary: 'Literary', fontClean: 'Clean & clear',
+          fontUse: 'Use this font', fontCurrent: 'Current font',
           finished: 'The celebration has begun. Today is the day!'
         }
       };
@@ -242,6 +308,30 @@
         }
       }
       languageButtons.forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.language)));
+
+      const fontButtons = document.querySelectorAll('[data-font]');
+      const defaultFont = 'Noto Serif Tamil';
+      function setTamilFont(fontName) {
+        document.documentElement.style.setProperty('--tamil', "'" + fontName.replace(/'/g, '') + "', serif");
+        document.querySelectorAll('[data-font-option]').forEach((card) => {
+          const selected = card.dataset.fontOption === fontName;
+          card.classList.toggle('selected', selected);
+          const button = card.querySelector('button');
+          button.setAttribute('aria-pressed', String(selected));
+        });
+        const language = document.documentElement.lang === 'en' ? 'en' : 'ta';
+        document.getElementById('font-current').textContent =
+          translations[language].fontCurrent + ': ' + fontName;
+        try { localStorage.setItem('wedding-tamil-font', fontName); } catch (_) {}
+      }
+      fontButtons.forEach((button) => button.addEventListener('click', () => setTamilFont(button.dataset.font)));
+      let initialFont = defaultFont;
+      try {
+        const savedFont = localStorage.getItem('wedding-tamil-font');
+        if (['Noto Serif Tamil', 'Arima', 'Hind Madurai', 'Mukta Malar', 'Tiro Tamil', 'Catamaran'].includes(savedFont)) initialFont = savedFont;
+      } catch (_) {}
+      setTamilFont(initialFont);
+
       let initialLanguage = 'ta';
       try {
         const savedLanguage = localStorage.getItem('wedding-language');
