@@ -1,11 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="ta">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f2e9">
-  <meta name="description" content="Join us in Puducherry for our wedding celebrations on 17 and 18 March 2027.">
-  <title>Our Wedding | 17–18 March 2027</title>
+  <meta name="description" content="17 மற்றும் 18 மார்ச் 2027 அன்று புதுச்சேரியில் நடைபெறும் எங்கள் திருமண விழாவிற்கு அன்புடன் அழைக்கிறோம்.">
+  <title>நம் திருமணம் | 17–18 மார்ச் 2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
@@ -16,6 +19,8 @@
       --accent: #a56d58;
       --line: #d9d0c1;
       --white: #fffdf8;
+      --tamil: 'Noto Serif Tamil', serif;
+      --sans: 'Catamaran', sans-serif;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -23,180 +28,246 @@
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: Georgia, 'Times New Roman', serif;
+      font-family: var(--tamil);
       -webkit-font-smoothing: antialiased;
     }
+    body.lang-en { font-family: Georgia, 'Times New Roman', serif; }
     a { color: inherit; }
-    .page-shell { width: min(100% - 32px, 920px); margin: 28px auto; }
+    .page-shell { width: min(100% - 32px, 920px); margin: 18px auto 28px; }
+    .topbar { display: flex; justify-content: flex-end; align-items: center; min-height: 42px; margin-bottom: 10px; }
+    .language-switch {
+      display: inline-flex; gap: 3px; padding: 4px;
+      border: 1px solid var(--line); border-radius: 999px;
+      background: rgba(255,253,248,.8);
+    }
+    .language-switch button {
+      min-width: 62px; padding: 7px 13px; border: 0; border-radius: 999px;
+      background: transparent; color: var(--muted); cursor: pointer;
+      font: 600 13px/1.4 var(--sans); transition: background .2s, color .2s;
+    }
+    .language-switch button[aria-pressed="true"] { background: var(--ink); color: white; }
+    .language-switch button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     .hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 660px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 76px 28px 64px;
-      text-align: center;
+      position: relative; overflow: hidden; min-height: 620px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 76px 28px 64px; text-align: center;
       border: 1px solid var(--line);
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.8), transparent 58%),
-        var(--white);
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.8), transparent 58%), var(--white);
+      animation: appear .9s ease both;
     }
-    .hero::before, .hero::after {
-      position: absolute;
-      color: #b9a88e;
-      font-size: 25px;
-      content: "✳";
-    }
+    .hero::before, .hero::after { position: absolute; color: #b9a88e; font-size: 25px; content: "✳"; }
     .hero::before { top: 25px; left: 27px; }
     .hero::after { right: 27px; bottom: 25px; }
     .eyebrow, .section-kicker {
-      margin: 0;
-      color: var(--accent);
-      font: 600 11px/1.6 system-ui, sans-serif;
-      letter-spacing: .24em;
-      text-transform: uppercase;
+      margin: 0; color: var(--accent);
+      font: 600 13px/1.8 var(--sans); letter-spacing: .08em;
     }
-    h1 {
-      margin: 26px 0 0;
-      font-size: clamp(64px, 12vw, 112px);
-      font-weight: 400;
-      letter-spacing: -.065em;
-      line-height: .9;
+    .hero h1 {
+      margin: 24px 0 0; font-size: clamp(46px, 10vw, 82px);
+      font-weight: 500; line-height: 1.35; letter-spacing: 0;
+      animation: rise .9s .12s ease both;
     }
-    .ampersand { display: block; margin: 16px 0; color: var(--accent); font-size: 44px; font-style: italic; }
-    .hero-copy { max-width: 480px; margin: 18px 0 0; color: var(--muted); font-size: 18px; line-height: 1.7; }
-    .hero-date { margin: 34px 0 0; font: 600 12px/1.7 system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
-    .ornament { width: 58px; height: 1px; margin: 26px auto; background: var(--accent); }
+    body.lang-en .hero h1 { font: 400 clamp(64px, 12vw, 112px)/.95 Georgia, serif; letter-spacing: -.06em; }
+    .ampersand { display: block; margin: 6px 0; color: var(--accent); font-size: 42px; font-style: italic; }
+    .hero-copy { max-width: 530px; margin: 16px 0 0; color: var(--muted); font-size: 17px; line-height: 2; }
+    .hero-date { margin: 28px 0 0; font: 600 15px/1.8 var(--sans); letter-spacing: .04em; }
+    .ornament { width: 58px; height: 1px; margin: 23px auto; background: var(--accent); }
     .countdown-section { padding: 58px 20px 62px; text-align: center; }
-    .countdown-section h2, .section-heading { margin: 12px 0 0; font-size: clamp(32px, 6vw, 46px); font-weight: 400; letter-spacing: -.035em; }
-    .countdown-note { margin: 12px 0 0; color: var(--muted); font: 13px/1.7 system-ui, sans-serif; }
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      width: min(100%, 620px);
-      margin: 34px auto 0;
-    }
+    .countdown-section h2, .section-heading { margin: 12px 0 0; font-size: clamp(27px, 5.5vw, 42px); font-weight: 500; line-height: 1.5; }
+    .countdown-note { margin: 12px 0 0; color: var(--muted); font: 15px/1.9 var(--sans); }
+    .countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; width: min(100%, 620px); margin: 30px auto 0; }
     .time-unit { padding: 22px 8px 18px; border: 1px solid var(--line); background: rgba(255,253,248,.58); }
-    .time-value { display: block; font-size: clamp(32px, 7vw, 52px); line-height: 1; font-variant-numeric: tabular-nums; }
-    .time-label { display: block; margin-top: 11px; color: var(--muted); font: 600 9px/1.4 system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+    .time-value { display: block; font: 500 clamp(30px, 6vw, 50px)/1.15 var(--sans); font-variant-numeric: tabular-nums; }
+    .time-label { display: block; margin-top: 9px; color: var(--muted); font: 600 12px/1.5 var(--sans); }
     .events { padding: 58px 26px 62px; background: var(--paper-deep); text-align: center; }
-    .event-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; width: min(100%, 720px); margin: 34px auto 0; }
+    .event-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; width: min(100%, 720px); margin: 30px auto 0; }
     .event-card { padding: 30px 22px; border: 1px solid #d5cabb; background: rgba(255,253,248,.68); }
-    .event-number { color: var(--accent); font: 600 10px/1.5 system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
-    .event-card h3 { margin: 12px 0 8px; font-size: 30px; font-weight: 400; }
-    .event-date { margin: 0; font-size: 16px; }
-    .event-time { margin: 10px 0 0; color: var(--muted); font: 13px/1.7 system-ui, sans-serif; }
+    .event-number { color: var(--accent); font: 600 13px/1.7 var(--sans); }
+    .event-card h3 { margin: 10px 0 8px; font-size: 27px; font-weight: 500; }
+    .event-date { margin: 0; font: 16px/1.8 var(--sans); }
+    .event-time { margin: 8px 0 0; color: var(--muted); font: 15px/1.8 var(--sans); }
     .venue { padding: 64px 22px 70px; text-align: center; }
-    .venue-name { max-width: 650px; margin: 16px auto 0; font-size: clamp(25px, 5vw, 36px); font-weight: 400; line-height: 1.25; }
-    .venue-address { max-width: 570px; margin: 16px auto 0; color: var(--muted); font: 14px/1.8 system-ui, sans-serif; }
-    .venue-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .link-button { display: inline-block; padding: 13px 19px; border: 1px solid var(--ink); text-decoration: none; font: 600 10px/1.4 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; transition: background .2s, color .2s; }
+    .venue-name { max-width: 680px; margin: 16px auto 0; font-size: clamp(23px, 4.8vw, 34px); font-weight: 500; line-height: 1.6; }
+    .venue-address { max-width: 600px; margin: 14px auto 0; color: var(--muted); font: 14px/2 var(--sans); }
+    .venue-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .link-button { display: inline-block; padding: 12px 19px; border: 1px solid var(--ink); text-decoration: none; font: 600 13px/1.5 var(--sans); transition: background .2s, color .2s; }
     .link-button.primary { background: var(--ink); color: var(--white); }
     .link-button:hover { background: var(--accent); border-color: var(--accent); color: white; }
-    footer { padding: 26px 15px 34px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font: 10px/1.7 system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+    footer { padding: 24px 15px 32px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font: 13px/1.8 var(--sans); }
+    @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 560px) {
       .page-shell { width: min(100% - 18px, 920px); margin: 9px auto; }
-      .hero { min-height: 590px; padding: 64px 20px 60px; }
-      .hero-copy { font-size: 16px; }
-      .countdown-section { padding: 48px 8px 52px; }
+      .hero { min-height: 560px; padding: 64px 18px 55px; }
+      .hero-copy { font-size: 15px; }
+      .countdown-section { padding: 46px 4px 50px; }
       .countdown { gap: 7px; }
-      .time-unit { padding: 18px 4px 15px; }
-      .time-label { font-size: 8px; letter-spacing: .1em; }
+      .time-unit { padding: 17px 3px 14px; }
+      .time-label { font-size: 11px; }
       .event-grid { grid-template-columns: 1fr; max-width: 390px; }
-      .events { padding-inline: 16px; }
+      .events { padding-inline: 15px; }
     }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
   </style>
 </head>
 <body>
   <div class="page-shell">
+    <header class="topbar">
+      <nav class="language-switch" aria-label="Choose language">
+        <button type="button" data-language="ta" aria-pressed="true">தமிழ்</button>
+        <button type="button" data-language="en" aria-pressed="false">English</button>
+      </nav>
+    </header>
+
     <main>
       <section class="hero" aria-labelledby="page-title">
-        <p class="eyebrow">Together with our families</p>
-        <h1 id="page-title">Our<br>Wedding</h1>
-        <span class="ampersand" aria-hidden="true">&amp;</span>
-        <p class="hero-copy">With joyful hearts, we invite you to celebrate the beginning of our forever.</p>
+        <p class="eyebrow" data-i18n="eyebrow">இரு குடும்பங்களின் அன்புடன்</p>
+        <h1 id="page-title" data-i18n="title">நம் திருமணம்</h1>
+        <span class="ampersand" aria-hidden="true">❦</span>
+        <p class="hero-copy" data-i18n="intro">எங்கள் வாழ்வின் இனிய தொடக்க விழாவில் தங்களையும் குடும்பத்தினரையும் அன்புடன் வரவேற்கிறோம்.</p>
         <div class="ornament" aria-hidden="true"></div>
-        <p class="hero-date">17 &amp; 18 March 2027 · Puducherry</p>
+        <p class="hero-date" data-i18n="heroDate">17 &amp; 18 மார்ச் 2027 · புதுச்சேரி</p>
       </section>
 
       <section class="countdown-section" aria-labelledby="countdown-title">
-        <p class="section-kicker">The big day</p>
-        <h2 id="countdown-title">Counting down to forever</h2>
-        <p class="countdown-note">The wedding ceremony begins on 18 March 2027 at 9:00 AM (IST).</p>
-        <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="Countdown to the wedding ceremony">
-          <div class="time-unit"><span class="time-value" id="days">---</span><span class="time-label">Days</span></div>
-          <div class="time-unit"><span class="time-value" id="hours">--</span><span class="time-label">Hours</span></div>
-          <div class="time-unit"><span class="time-value" id="minutes">--</span><span class="time-label">Minutes</span></div>
-          <div class="time-unit"><span class="time-value" id="seconds">--</span><span class="time-label">Seconds</span></div>
+        <p class="section-kicker" data-i18n="bigDay">இனிய நாள் நெருங்குகிறது</p>
+        <h2 id="countdown-title" data-i18n="countTitle">இனிதே தொடங்கும் இல்லறப் பயணம்</h2>
+        <p class="countdown-note" data-i18n="countNote">திருமண நாள் · 18 மார்ச் 2027 · காலை 9:00 மணி (IST)</p>
+        <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="திருமணத்திற்கான மீதமுள்ள நேரம்">
+          <div class="time-unit"><span class="time-value" id="days">---</span><span class="time-label" data-i18n="days">நாட்கள்</span></div>
+          <div class="time-unit"><span class="time-value" id="hours">--</span><span class="time-label" data-i18n="hours">மணி</span></div>
+          <div class="time-unit"><span class="time-value" id="minutes">--</span><span class="time-label" data-i18n="minutes">நிமிடங்கள்</span></div>
+          <div class="time-unit"><span class="time-value" id="seconds">--</span><span class="time-label" data-i18n="seconds">விநாடிகள்</span></div>
         </div>
-        <p class="countdown-note" id="countdown-message">Every moment brings us closer.</p>
+        <p class="countdown-note" id="countdown-message" data-i18n="countMessage">ஒவ்வொரு நொடியும் அந்த இனிய தருணத்தை நெருங்கச் செய்கிறது.</p>
       </section>
 
       <section class="events" aria-labelledby="events-title">
-        <p class="section-kicker">Save the dates</p>
-        <h2 class="section-heading" id="events-title">Two days of celebration</h2>
+        <p class="section-kicker" data-i18n="saveDate">நாளைக் குறித்து வைத்துக்கொள்ளுங்கள்</p>
+        <h2 class="section-heading" id="events-title" data-i18n="eventsTitle">இரண்டு நாட்கள் இனிய கொண்டாட்டம்</h2>
         <div class="event-grid">
           <article class="event-card">
-            <p class="event-number">Day one</p>
-            <h3>Reception</h3>
-            <p class="event-date">Wednesday, 17 March 2027</p>
-            <p class="event-time">7:00 PM – 9:00 PM</p>
+            <p class="event-number" data-i18n="dayOne">முதல் நாள்</p>
+            <h3 data-i18n="reception">வரவேற்பு</h3>
+            <p class="event-date" data-i18n="receptionDate">புதன்கிழமை, 17 மார்ச் 2027</p>
+            <p class="event-time" data-i18n="receptionTime">மாலை 7:00 – 9:00 மணி</p>
           </article>
           <article class="event-card">
-            <p class="event-number">Day two</p>
-            <h3>Marriage</h3>
-            <p class="event-date">Thursday, 18 March 2027</p>
-            <p class="event-time">9:00 AM</p>
+            <p class="event-number" data-i18n="dayTwo">இரண்டாம் நாள்</p>
+            <h3 data-i18n="marriage">திருமணம்</h3>
+            <p class="event-date" data-i18n="marriageDate">வியாழக்கிழமை, 18 மார்ச் 2027</p>
+            <p class="event-time" data-i18n="marriageTime">காலை 9:00 மணி</p>
           </article>
         </div>
       </section>
 
       <section class="venue" aria-labelledby="venue-title">
-        <p class="section-kicker">The place</p>
-        <h2 class="section-heading" id="venue-title">Celebrate with us</h2>
-        <p class="venue-name">Shree Raja Rajeswari Thirumana Mandabam</p>
-        <p class="venue-address">No. 144, 100 Feet East Coast Road (ECR), Pakkamudayanpet, Lawspet, Puducherry – 605008, India</p>
+        <p class="section-kicker" data-i18n="venueKicker">நிகழ்விடம்</p>
+        <h2 class="section-heading" id="venue-title" data-i18n="venueTitle">உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்</h2>
+        <p class="venue-name" data-i18n="venueName">ஸ்ரீ ராஜ ராஜேஸ்வரி திருமண மண்டபம்</p>
+        <p class="venue-address" data-i18n="venueAddress">எண் 144, 100 அடி கிழக்கு கடற்கரைச் சாலை (ECR), பாக்கமுடையன்பேட்டை, லாஸ்பேட்டை, புதுச்சேரி – 605008.</p>
         <div class="venue-actions">
-          <a class="link-button primary" href="https://www.google.com/maps/search/?api=1&amp;query=Shree+Raja+Rajeswari+Thirumana+Mandabam%2C+Puducherry" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
-          <a class="link-button" href="https://www.waze.com/live-map/directions/in/py/puducherry/shree-raja-rajeswari-thirumana-mandapam?to=place.ChIJi9u_MGxhUzoRC921SfbOVkc" target="_blank" rel="noopener noreferrer">Get directions</a>
+          <a class="link-button primary" href="https://www.google.com/maps/search/?api=1&amp;query=Shree+Raja+Rajeswari+Thirumana+Mandabam%2C+Puducherry" target="_blank" rel="noopener noreferrer" data-i18n="mapButton">கூகுள் வரைபடத்தில் பார்க்க</a>
+          <a class="link-button" href="https://www.waze.com/live-map/directions/in/py/puducherry/shree-raja-rajeswari-thirumana-mandapam?to=place.ChIJi9u_MGxhUzoRC921SfbOVkc" target="_blank" rel="noopener noreferrer" data-i18n="directionsButton">வழித்தடம்</a>
         </div>
       </section>
     </main>
-    <footer>We can't wait to celebrate with you · With love</footer>
+    <footer data-i18n="footer">உங்கள் வருகையே எங்கள் மகிழ்ச்சி · அன்புடன்</footer>
   </div>
 
   <script>
     (() => {
-      // 9:00 AM India Standard Time (UTC+05:30), 18 March 2027.
-      const weddingTime = new Date('2027-03-18T09:00:00+05:30').getTime();
-      const fields = {
-        days: document.getElementById('days'),
-        hours: document.getElementById('hours'),
-        minutes: document.getElementById('minutes'),
-        seconds: document.getElementById('seconds')
+      const translations = {
+        ta: {
+          eyebrow: 'இரு குடும்பங்களின் அன்புடன்', title: 'நம் திருமணம்',
+          intro: 'எங்கள் வாழ்வின் இனிய தொடக்க விழாவில் தங்களையும் குடும்பத்தினரையும் அன்புடன் வரவேற்கிறோம்.',
+          heroDate: '17 & 18 மார்ச் 2027 · புதுச்சேரி',
+          bigDay: 'இனிய நாள் நெருங்குகிறது', countTitle: 'இனிதே தொடங்கும் இல்லறப் பயணம்',
+          countNote: 'திருமண நாள் · 18 மார்ச் 2027 · காலை 9:00 மணி (IST)',
+          days: 'நாட்கள்', hours: 'மணி', minutes: 'நிமிடங்கள்', seconds: 'விநாடிகள்',
+          countMessage: 'ஒவ்வொரு நொடியும் அந்த இனிய தருணத்தை நெருங்கச் செய்கிறது.',
+          saveDate: 'நாளைக் குறித்து வைத்துக்கொள்ளுங்கள்', eventsTitle: 'இரண்டு நாட்கள் இனிய கொண்டாட்டம்',
+          dayOne: 'முதல் நாள்', reception: 'வரவேற்பு', receptionDate: 'புதன்கிழமை, 17 மார்ச் 2027',
+          receptionTime: 'மாலை 7:00 – 9:00 மணி', dayTwo: 'இரண்டாம் நாள்', marriage: 'திருமணம்',
+          marriageDate: 'வியாழக்கிழமை, 18 மார்ச் 2027', marriageTime: 'காலை 9:00 மணி',
+          venueKicker: 'நிகழ்விடம்', venueTitle: 'உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்',
+          venueName: 'ஸ்ரீ ராஜ ராஜேஸ்வரி திருமண மண்டபம்',
+          venueAddress: 'எண் 144, 100 அடி கிழக்கு கடற்கரைச் சாலை (ECR), பாக்கமுடையன்பேட்டை, லாஸ்பேட்டை, புதுச்சேரி – 605008.',
+          mapButton: 'கூகுள் வரைபடத்தில் பார்க்க', directionsButton: 'வழித்தடம்',
+          footer: 'உங்கள் வருகையே எங்கள் மகிழ்ச்சி · அன்புடன்',
+          finished: 'திருமணக் கொண்டாட்டம் இனிதே தொடங்கிவிட்டது!'
+        },
+        en: {
+          eyebrow: 'Together with our families', title: 'Our Wedding',
+          intro: 'With joyful hearts, we invite you and your family to celebrate the beginning of our forever.',
+          heroDate: '17 & 18 March 2027 · Puducherry',
+          bigDay: 'The special day is getting closer', countTitle: 'Counting down to forever',
+          countNote: 'Wedding day · 18 March 2027 · 9:00 AM (IST)',
+          days: 'Days', hours: 'Hours', minutes: 'Minutes', seconds: 'Seconds',
+          countMessage: 'Every moment brings us closer to the celebration.',
+          saveDate: 'Please save the dates', eventsTitle: 'Two days of celebration',
+          dayOne: 'Day one', reception: 'Reception', receptionDate: 'Wednesday, 17 March 2027',
+          receptionTime: '7:00 PM – 9:00 PM', dayTwo: 'Day two', marriage: 'Wedding ceremony',
+          marriageDate: 'Thursday, 18 March 2027', marriageTime: '9:00 AM',
+          venueKicker: 'The venue', venueTitle: 'We look forward to celebrating with you',
+          venueName: 'Shree Raja Rajeswari Thirumana Mandabam',
+          venueAddress: 'No. 144, 100 Feet East Coast Road (ECR), Pakkamudayanpet, Lawspet, Puducherry – 605008, India.',
+          mapButton: 'View on Google Maps', directionsButton: 'Get directions',
+          footer: 'Your presence is our happiness · With love',
+          finished: 'The celebration has begun. Today is the day!'
+        }
       };
-      const message = document.getElementById('countdown-message');
 
+      const languageButtons = document.querySelectorAll('[data-language]');
+      function setLanguage(language) {
+        const copy = translations[language];
+        document.documentElement.lang = language;
+        document.body.classList.toggle('lang-en', language === 'en');
+        document.title = language === 'ta' ? 'நம் திருமணம் | 17–18 மார்ச் 2027' : 'Our Wedding | 17–18 March 2027';
+        document.querySelectorAll('[data-i18n]').forEach((element) => {
+          const key = element.dataset.i18n;
+          if (copy[key]) element.textContent = copy[key];
+        });
+        languageButtons.forEach((button) => {
+          button.setAttribute('aria-pressed', String(button.dataset.language === language));
+        });
+        document.getElementById('countdown').setAttribute('aria-label',
+          language === 'ta' ? 'திருமணத்திற்கான மீதமுள்ள நேரம்' : 'Time remaining until the wedding');
+        try { localStorage.setItem('wedding-language', language); } catch (_) {}
+        if (Date.now() >= weddingTime) {
+          document.getElementById('countdown-message').textContent = copy.finished;
+        }
+      }
+      languageButtons.forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.language)));
+      let initialLanguage = 'ta';
+      try {
+        const savedLanguage = localStorage.getItem('wedding-language');
+        if (savedLanguage === 'ta' || savedLanguage === 'en') initialLanguage = savedLanguage;
+      } catch (_) {}
+      const weddingTime = new Date('2027-03-18T09:00:00+05:30').getTime();
+      setLanguage(initialLanguage);
+
+      const fields = {
+        days: document.getElementById('days'), hours: document.getElementById('hours'),
+        minutes: document.getElementById('minutes'), seconds: document.getElementById('seconds')
+      };
       function updateCountdown() {
         const remaining = weddingTime - Date.now();
-
         if (remaining <= 0) {
           Object.values(fields).forEach((field) => { field.textContent = '00'; });
-          message.textContent = 'The celebration has begun. Today is the day!';
+          document.getElementById('countdown-message').textContent =
+            translations[document.documentElement.lang].finished;
           return;
         }
-
         const totalSeconds = Math.floor(remaining / 1000);
         fields.days.textContent = String(Math.floor(totalSeconds / 86400)).padStart(3, '0');
         fields.hours.textContent = String(Math.floor((totalSeconds % 86400) / 3600)).padStart(2, '0');
         fields.minutes.textContent = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
         fields.seconds.textContent = String(totalSeconds % 60).padStart(2, '0');
       }
-
       updateCountdown();
       window.setInterval(updateCountdown, 1000);
     })();
