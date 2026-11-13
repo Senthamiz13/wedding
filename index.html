@@ -3,130 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f2e9">
-  <meta name="description" content="17 மற்றும் 18 மார்ச் 2027 அன்று புதுச்சேரியில் நடைபெறும் எங்கள் திருமண விழாவிற்கு அன்புடன் அழைக்கிறோம்.">
-  <title>நம் திருமணம் | 17–18 மார்ச் 2027</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;500;600;700&family=Catamaran:wght@400;500;600;700&family=Hind+Madurai:wght@400;500;600;700&family=Mukta+Malar:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&family=Tiro+Tamil:ital@0;1&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      color-scheme: light;
-      --paper: #f6f2e9;
-      --paper-deep: #ece5d8;
-      --ink: #344438;
-      --muted: #74796d;
-      --accent: #a56d58;
-      --line: #d9d0c1;
-      --white: #fffdf8;
-      --tamil: 'Noto Serif Tamil', serif;
-      --sans: 'Catamaran', sans-serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--tamil);
-      -webkit-font-smoothing: antialiased;
-    }
-    body.lang-en { font-family: Georgia, 'Times New Roman', serif; }
-    a { color: inherit; }
-    .page-shell { width: min(100% - 32px, 920px); margin: 18px auto 28px; }
-    .topbar { display: flex; justify-content: flex-end; align-items: center; min-height: 42px; margin-bottom: 10px; }
-    .language-switch {
-      display: inline-flex; gap: 3px; padding: 4px;
-      border: 1px solid var(--line); border-radius: 999px;
-      background: rgba(255,253,248,.8);
-    }
-    .language-switch button {
-      min-width: 62px; padding: 7px 13px; border: 0; border-radius: 999px;
-      background: transparent; color: var(--muted); cursor: pointer;
-      font: 600 13px/1.4 var(--sans); transition: background .2s, color .2s;
-    }
-    .language-switch button[aria-pressed="true"] { background: var(--ink); color: white; }
-    .language-switch button:focus-visible, a:focus-visible, .font-lab button:focus-visible, .font-lab summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-    .font-lab { margin: 0 0 14px; border: 1px solid var(--line); background: rgba(255,253,248,.82); }
-    .font-lab summary { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 13px 16px; cursor: pointer; color: var(--ink); font-size: 14px; }
-    .font-lab-hint { color: var(--muted); font: 12px/1.5 var(--sans); }
-    .font-lab-intro { margin: 0; padding: 0 16px 12px; color: var(--muted); font: 13px/1.8 var(--sans); }
-    .font-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0 12px 12px; }
-    .font-option { min-width: 0; padding: 13px; border: 1px solid var(--line); background: var(--white); }
-    .font-option.selected { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-    .font-option-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font: 12px/1.5 var(--sans); }
-    .font-option-meta span { color: var(--muted); }
-    .font-sample { min-height: 58px; margin: 13px 0; font-size: clamp(17px, 3vw, 21px); line-height: 1.8; }
-    .font-apply { width: 100%; padding: 8px 10px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; font: 600 12px/1.5 var(--sans); }
-    .font-option.selected .font-apply { background: var(--ink); border-color: var(--ink); color: white; }
-    .font-current { margin: 0; padding: 0 14px 13px; color: var(--muted); font: 12px/1.6 var(--sans); }
-    .hero {
-      position: relative; overflow: hidden; min-height: 620px;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 76px 28px 64px; text-align: center;
-      border: 1px solid var(--line);
-      background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.8), transparent 58%), var(--white);
-      animation: appear .9s ease both;
-    }
-    .hero::before, .hero::after { position: absolute; color: #b9a88e; font-size: 25px; content: "✳"; }
-    .hero::before { top: 25px; left: 27px; }
-    .hero::after { right: 27px; bottom: 25px; }
-    .eyebrow, .section-kicker {
-      margin: 0; color: var(--accent);
-      font: 600 13px/1.8 var(--sans); letter-spacing: .08em;
-    }
-    .hero h1 {
-      margin: 24px 0 0; font-size: clamp(46px, 10vw, 82px);
-      font-weight: 500; line-height: 1.35; letter-spacing: 0;
-      animation: rise .9s .12s ease both;
-    }
-    body.lang-en .hero h1 { font: 400 clamp(64px, 12vw, 112px)/.95 Georgia, serif; letter-spacing: -.06em; }
-    .ampersand { display: block; margin: 6px 0; color: var(--accent); font-size: 42px; font-style: italic; }
-    .hero-copy { max-width: 530px; margin: 16px 0 0; color: var(--muted); font-size: 17px; line-height: 2; }
-    .hero-date { margin: 28px 0 0; font: 600 15px/1.8 var(--sans); letter-spacing: .04em; }
-    .ornament { width: 58px; height: 1px; margin: 23px auto; background: var(--accent); }
-    .countdown-section { padding: 58px 20px 62px; text-align: center; }
-    .countdown-section h2, .section-heading { margin: 12px 0 0; font-size: clamp(27px, 5.5vw, 42px); font-weight: 500; line-height: 1.5; }
-    .countdown-note { margin: 12px 0 0; color: var(--muted); font: 15px/1.9 var(--sans); }
-    .countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; width: min(100%, 620px); margin: 30px auto 0; }
-    .time-unit { padding: 22px 8px 18px; border: 1px solid var(--line); background: rgba(255,253,248,.58); }
-    .time-value { display: block; font: 500 clamp(30px, 6vw, 50px)/1.15 var(--sans); font-variant-numeric: tabular-nums; }
-    .time-label { display: block; margin-top: 9px; color: var(--muted); font: 600 12px/1.5 var(--sans); }
-    .events { padding: 58px 26px 62px; background: var(--paper-deep); text-align: center; }
-    .event-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; width: min(100%, 720px); margin: 30px auto 0; }
-    .event-card { padding: 30px 22px; border: 1px solid #d5cabb; background: rgba(255,253,248,.68); }
-    .event-number { color: var(--accent); font: 600 13px/1.7 var(--sans); }
-    .event-card h3 { margin: 10px 0 8px; font-size: 27px; font-weight: 500; }
-    .event-date { margin: 0; font: 16px/1.8 var(--sans); }
-    .event-time { margin: 8px 0 0; color: var(--muted); font: 15px/1.8 var(--sans); }
-    .venue { padding: 64px 22px 70px; text-align: center; }
-    .venue-name { max-width: 680px; margin: 16px auto 0; font-size: clamp(23px, 4.8vw, 34px); font-weight: 500; line-height: 1.6; }
-    .venue-address { max-width: 600px; margin: 14px auto 0; color: var(--muted); font: 14px/2 var(--sans); }
-    .venue-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-    .link-button { display: inline-block; padding: 12px 19px; border: 1px solid var(--ink); text-decoration: none; font: 600 13px/1.5 var(--sans); transition: background .2s, color .2s; }
-    .link-button.primary { background: var(--ink); color: var(--white); }
-    .link-button:hover { background: var(--accent); border-color: var(--accent); color: white; }
-    footer { padding: 24px 15px 32px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font: 13px/1.8 var(--sans); }
-    @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 560px) {
-      .page-shell { width: min(100% - 18px, 920px); margin: 9px auto; }
-      .hero { min-height: 560px; padding: 64px 18px 55px; }
-      .hero-copy { font-size: 15px; }
-      .countdown-section { padding: 46px 4px 50px; }
-      .countdown { gap: 7px; }
-      .time-unit { padding: 17px 3px 14px; }
-      .time-label { font-size: 11px; }
-      .event-grid { grid-template-columns: 1fr; max-width: 390px; }
-      .font-options { grid-template-columns: 1fr; }
-      .font-option { padding: 12px; }
-      .events { padding-inline: 15px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-    }
-  </style>
+  <meta name="theme-color" content="#f8f5ec">
+  <meta name="description" content="மோனிகா &amp; செந்தமிழன் திருமணம் · 17 மற்றும் 18 மார்ச் 2027 அன்று புதுச்சேரியில் நடைபெறும் எங்கள் திருமண விழாவிற்கு அன்புடன் அழைக்கிறோம்.">
+  <title>மோனிகா &amp; செந்தமிழன் | 17–18 மார்ச் 2027</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/bamini-converter.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
   <div class="page-shell">
@@ -137,52 +19,18 @@
       </nav>
     </header>
 
-    <details class="font-lab">
-      <summary>
-        <span data-i18n="fontLabTitle">தமிழ் எழுத்துருக்களைப் பாருங்கள்</span>
-        <span class="font-lab-hint" data-i18n="fontLabHint">Try a style</span>
-      </summary>
-      <p class="font-lab-intro" data-i18n="fontLabIntro">ஒவ்வொரு எழுத்துருவையும் பார்த்து, பிடித்ததைத் தேர்ந்தெடுக்கலாம். தேர்வு செய்ததும் முழு அழைப்பிதழிலும் அது பயன்படுத்தப்படும்.</p>
-      <div class="font-options">
-        <article class="font-option" data-font-option="Noto Serif Tamil">
-          <div class="font-option-meta"><strong>Noto Serif Tamil</strong><span data-i18n="fontClassic">பாரம்பரியம்</span></div>
-          <p class="font-sample" style="font-family:'Noto Serif Tamil',serif">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
-          <button type="button" class="font-apply" data-font="Noto Serif Tamil" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
-        </article>
-        <article class="font-option" data-font-option="Arima">
-          <div class="font-option-meta"><strong>Arima</strong><span data-i18n="fontDecorative">அலங்காரமான</span></div>
-          <p class="font-sample" style="font-family:'Arima',cursive">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
-          <button type="button" class="font-apply" data-font="Arima" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
-        </article>
-        <article class="font-option" data-font-option="Hind Madurai">
-          <div class="font-option-meta"><strong>Hind Madurai</strong><span data-i18n="fontModern">நவீன எளிமை</span></div>
-          <p class="font-sample" style="font-family:'Hind Madurai',sans-serif">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
-          <button type="button" class="font-apply" data-font="Hind Madurai" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
-        </article>
-        <article class="font-option" data-font-option="Mukta Malar">
-          <div class="font-option-meta"><strong>Mukta Malar</strong><span data-i18n="fontVersatile">மென்மையான</span></div>
-          <p class="font-sample" style="font-family:'Mukta Malar',sans-serif">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
-          <button type="button" class="font-apply" data-font="Mukta Malar" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
-        </article>
-        <article class="font-option" data-font-option="Tiro Tamil">
-          <div class="font-option-meta"><strong>Tiro Tamil</strong><span data-i18n="fontLiterary">இலக்கிய நயம்</span></div>
-          <p class="font-sample" style="font-family:'Tiro Tamil',serif">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
-          <button type="button" class="font-apply" data-font="Tiro Tamil" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
-        </article>
-        <article class="font-option" data-font-option="Catamaran">
-          <div class="font-option-meta"><strong>Catamaran</strong><span data-i18n="fontClean">தெளிவான தோற்றம்</span></div>
-          <p class="font-sample" style="font-family:'Catamaran',sans-serif">நம் திருமணம் · அன்புடன் அழைக்கிறோம்</p>
-          <button type="button" class="font-apply" data-font="Catamaran" data-i18n="fontUse">இந்த எழுத்துருவைப் பயன்படுத்து</button>
-        </article>
-      </div>
-      <p class="font-current" id="font-current" aria-live="polite">தற்போதைய எழுத்துரு: Noto Serif Tamil</p>
-    </details>
-
     <main>
       <section class="hero" aria-labelledby="page-title">
+        <img class="hero-feather" src="assets/images/hero/peacock-feather.jpg" alt="" aria-hidden="true">
         <p class="eyebrow" data-i18n="eyebrow">இரு குடும்பங்களின் அன்புடன்</p>
         <h1 id="page-title" data-i18n="title">நம் திருமணம்</h1>
-        <span class="ampersand" aria-hidden="true">❦</span>
+        <p class="couple-names"><span data-i18n="name1">மோனிகா</span><span class="names-join" aria-hidden="true">❦</span><span data-i18n="name2">செந்தமிழன்</span></p>
+        <svg class="vel-mark" viewBox="0 0 80 112" aria-hidden="true">
+          <path class="vel-rays" d="M40 5v12M17 16l8 9M63 16l-8 9M8 39h13M72 39H59" />
+          <path class="vel-shaft" d="M40 31v72" />
+          <path class="vel-head" d="M40 20c-2 12-13 20-13 31 0 8 5 13 13 16 8-3 13-8 13-16 0-11-11-19-13-31Z" />
+          <path class="vel-detail" d="M40 28v36" />
+        </svg>
         <p class="hero-copy" data-i18n="intro">எங்கள் வாழ்வின் இனிய தொடக்க விழாவில் தங்களையும் குடும்பத்தினரையும் அன்புடன் வரவேற்கிறோம்.</p>
         <div class="ornament" aria-hidden="true"></div>
         <p class="hero-date" data-i18n="heroDate">17 &amp; 18 மார்ச் 2027 · புதுச்சேரி</p>
@@ -202,6 +50,7 @@
       </section>
 
       <section class="events" aria-labelledby="events-title">
+        <img class="events-flower" src="assets/images/details/glory-lily.jpg" alt="" aria-hidden="true">
         <p class="section-kicker" data-i18n="saveDate">நாளைக் குறித்து வைத்துக்கொள்ளுங்கள்</p>
         <h2 class="section-heading" id="events-title" data-i18n="eventsTitle">இரண்டு நாட்கள் இனிய கொண்டாட்டம்</h2>
         <div class="event-grid">
@@ -234,133 +83,5 @@
     <footer data-i18n="footer">உங்கள் வருகையே எங்கள் மகிழ்ச்சி · அன்புடன்</footer>
   </div>
 
-  <script>
-    (() => {
-      const translations = {
-        ta: {
-          eyebrow: 'இரு குடும்பங்களின் அன்புடன்', title: 'நம் திருமணம்',
-          intro: 'எங்கள் வாழ்வின் இனிய தொடக்க விழாவில் தங்களையும் குடும்பத்தினரையும் அன்புடன் வரவேற்கிறோம்.',
-          heroDate: '17 & 18 மார்ச் 2027 · புதுச்சேரி',
-          bigDay: 'இனிய நாள் நெருங்குகிறது', countTitle: 'இனிதே தொடங்கும் இல்லறப் பயணம்',
-          countNote: 'திருமண நாள் · 18 மார்ச் 2027 · காலை 9:00 மணி (IST)',
-          days: 'நாட்கள்', hours: 'மணி', minutes: 'நிமிடங்கள்', seconds: 'விநாடிகள்',
-          countMessage: 'ஒவ்வொரு நொடியும் அந்த இனிய தருணத்தை நெருங்கச் செய்கிறது.',
-          saveDate: 'நாளைக் குறித்து வைத்துக்கொள்ளுங்கள்', eventsTitle: 'இரண்டு நாட்கள் இனிய கொண்டாட்டம்',
-          dayOne: 'முதல் நாள்', reception: 'வரவேற்பு', receptionDate: 'புதன்கிழமை, 17 மார்ச் 2027',
-          receptionTime: 'மாலை 7:00 – 9:00 மணி', dayTwo: 'இரண்டாம் நாள்', marriage: 'திருமணம்',
-          marriageDate: 'வியாழக்கிழமை, 18 மார்ச் 2027', marriageTime: 'காலை 9:00 மணி',
-          venueKicker: 'நிகழ்விடம்', venueTitle: 'உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்',
-          venueName: 'ஸ்ரீ ராஜ ராஜேஸ்வரி திருமண மண்டபம்',
-          venueAddress: 'எண் 144, 100 அடி கிழக்கு கடற்கரைச் சாலை (ECR), பாக்கமுடையன்பேட்டை, லாஸ்பேட்டை, புதுச்சேரி – 605008.',
-          mapButton: 'கூகுள் வரைபடத்தில் பார்க்க', directionsButton: 'வழித்தடம்',
-          footer: 'உங்கள் வருகையே எங்கள் மகிழ்ச்சி · அன்புடன்',
-          fontLabTitle: 'தமிழ் எழுத்துருக்களைப் பாருங்கள்', fontLabHint: 'எழுத்துரு தேர்வு',
-          fontLabIntro: 'ஒவ்வொரு எழுத்துருவையும் பார்த்து, பிடித்ததைத் தேர்ந்தெடுக்கலாம். தேர்வு செய்ததும் முழு அழைப்பிதழிலும் அது பயன்படுத்தப்படும்.',
-          fontClassic: 'பாரம்பரியம்', fontDecorative: 'அலங்காரமான', fontModern: 'நவீன எளிமை',
-          fontVersatile: 'மென்மையான', fontLiterary: 'இலக்கிய நயம்', fontClean: 'தெளிவான தோற்றம்',
-          fontUse: 'இந்த எழுத்துருவைப் பயன்படுத்து', fontCurrent: 'தற்போதைய எழுத்துரு',
-          finished: 'திருமணக் கொண்டாட்டம் இனிதே தொடங்கிவிட்டது!'
-        },
-        en: {
-          eyebrow: 'Together with our families', title: 'Our Wedding',
-          intro: 'With joyful hearts, we invite you and your family to celebrate the beginning of our forever.',
-          heroDate: '17 & 18 March 2027 · Puducherry',
-          bigDay: 'The special day is getting closer', countTitle: 'Counting down to forever',
-          countNote: 'Wedding day · 18 March 2027 · 9:00 AM (IST)',
-          days: 'Days', hours: 'Hours', minutes: 'Minutes', seconds: 'Seconds',
-          countMessage: 'Every moment brings us closer to the celebration.',
-          saveDate: 'Please save the dates', eventsTitle: 'Two days of celebration',
-          dayOne: 'Day one', reception: 'Reception', receptionDate: 'Wednesday, 17 March 2027',
-          receptionTime: '7:00 PM – 9:00 PM', dayTwo: 'Day two', marriage: 'Wedding ceremony',
-          marriageDate: 'Thursday, 18 March 2027', marriageTime: '9:00 AM',
-          venueKicker: 'The venue', venueTitle: 'We look forward to celebrating with you',
-          venueName: 'Shree Raja Rajeswari Thirumana Mandabam',
-          venueAddress: 'No. 144, 100 Feet East Coast Road (ECR), Pakkamudayanpet, Lawspet, Puducherry – 605008, India.',
-          mapButton: 'View on Google Maps', directionsButton: 'Get directions',
-          footer: 'Your presence is our happiness · With love',
-          fontLabTitle: 'Explore Tamil fonts', fontLabHint: 'Choose a style',
-          fontLabIntro: 'Preview each typeface and choose your favourite. Your selection will be applied across the invitation.',
-          fontClassic: 'Traditional', fontDecorative: 'Decorative', fontModern: 'Modern & clean',
-          fontVersatile: 'Soft & versatile', fontLiterary: 'Literary', fontClean: 'Clean & clear',
-          fontUse: 'Use this font', fontCurrent: 'Current font',
-          finished: 'The celebration has begun. Today is the day!'
-        }
-      };
-
-      const languageButtons = document.querySelectorAll('[data-language]');
-      function setLanguage(language) {
-        const copy = translations[language];
-        document.documentElement.lang = language;
-        document.body.classList.toggle('lang-en', language === 'en');
-        document.title = language === 'ta' ? 'நம் திருமணம் | 17–18 மார்ச் 2027' : 'Our Wedding | 17–18 March 2027';
-        document.querySelectorAll('[data-i18n]').forEach((element) => {
-          const key = element.dataset.i18n;
-          if (copy[key]) element.textContent = copy[key];
-        });
-        languageButtons.forEach((button) => {
-          button.setAttribute('aria-pressed', String(button.dataset.language === language));
-        });
-        document.getElementById('countdown').setAttribute('aria-label',
-          language === 'ta' ? 'திருமணத்திற்கான மீதமுள்ள நேரம்' : 'Time remaining until the wedding');
-        try { localStorage.setItem('wedding-language', language); } catch (_) {}
-        if (Date.now() >= weddingTime) {
-          document.getElementById('countdown-message').textContent = copy.finished;
-        }
-      }
-      languageButtons.forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.language)));
-
-      const fontButtons = document.querySelectorAll('[data-font]');
-      const defaultFont = 'Noto Serif Tamil';
-      function setTamilFont(fontName) {
-        document.documentElement.style.setProperty('--tamil', "'" + fontName.replace(/'/g, '') + "', serif");
-        document.querySelectorAll('[data-font-option]').forEach((card) => {
-          const selected = card.dataset.fontOption === fontName;
-          card.classList.toggle('selected', selected);
-          const button = card.querySelector('button');
-          button.setAttribute('aria-pressed', String(selected));
-        });
-        const language = document.documentElement.lang === 'en' ? 'en' : 'ta';
-        document.getElementById('font-current').textContent =
-          translations[language].fontCurrent + ': ' + fontName;
-        try { localStorage.setItem('wedding-tamil-font', fontName); } catch (_) {}
-      }
-      fontButtons.forEach((button) => button.addEventListener('click', () => setTamilFont(button.dataset.font)));
-      let initialFont = defaultFont;
-      try {
-        const savedFont = localStorage.getItem('wedding-tamil-font');
-        if (['Noto Serif Tamil', 'Arima', 'Hind Madurai', 'Mukta Malar', 'Tiro Tamil', 'Catamaran'].includes(savedFont)) initialFont = savedFont;
-      } catch (_) {}
-      setTamilFont(initialFont);
-
-      let initialLanguage = 'ta';
-      try {
-        const savedLanguage = localStorage.getItem('wedding-language');
-        if (savedLanguage === 'ta' || savedLanguage === 'en') initialLanguage = savedLanguage;
-      } catch (_) {}
-      const weddingTime = new Date('2027-03-18T09:00:00+05:30').getTime();
-      setLanguage(initialLanguage);
-
-      const fields = {
-        days: document.getElementById('days'), hours: document.getElementById('hours'),
-        minutes: document.getElementById('minutes'), seconds: document.getElementById('seconds')
-      };
-      function updateCountdown() {
-        const remaining = weddingTime - Date.now();
-        if (remaining <= 0) {
-          Object.values(fields).forEach((field) => { field.textContent = '00'; });
-          document.getElementById('countdown-message').textContent =
-            translations[document.documentElement.lang].finished;
-          return;
-        }
-        const totalSeconds = Math.floor(remaining / 1000);
-        fields.days.textContent = String(Math.floor(totalSeconds / 86400)).padStart(3, '0');
-        fields.hours.textContent = String(Math.floor((totalSeconds % 86400) / 3600)).padStart(2, '0');
-        fields.minutes.textContent = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
-        fields.seconds.textContent = String(totalSeconds % 60).padStart(2, '0');
-      }
-      updateCountdown();
-      window.setInterval(updateCountdown, 1000);
-    })();
-  </script>
 </body>
 </html>

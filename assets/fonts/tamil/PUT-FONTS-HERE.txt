@@ -1,0 +1,5 @@
+Put these files here (exact names, case-sensitive):
+Bamini_Tamil_70.ttf
+Bamini_Tamil_71.ttf
+NotoSerifTamil.woff2
+NotoSansTamil.woff2
