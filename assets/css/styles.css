@@ -1,20 +1,4 @@
 @font-face {
-  font-family: 'Noto Serif Tamil';
-  src: url('../fonts/tamil/NotoSerifTamil.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Noto Sans Tamil';
-  src: url('../fonts/tamil/NotoSansTamil.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Bamini Tamil 70';
   src: url('../fonts/tamil/Bamini_Tamil_70.ttf') format('truetype');
   font-style: normal;
@@ -44,10 +28,10 @@
       --maroon: #7a1f2b;
       --leaf: #2f6841;
       --saffron: #ed8d23;
-      --font-content: 'Noto Serif Tamil', 'Tamil Sangam MN', 'Latha', 'Nirmala UI', serif;
-      --font-message: 'Bamini Tamil 71', 'Noto Serif Tamil', 'Latha', serif;
-      --font-title: 'Bamini Tamil 70', 'Noto Serif Tamil', 'Latha', serif;
-      --sans: 'Noto Sans Tamil', 'Tamil Sangam MN', 'Latha', 'Nirmala UI', sans-serif;
+      --font-content: serif;
+      --font-message: 'Bamini Tamil 71';
+      --font-title: 'Bamini Tamil 70';
+      --sans: sans-serif;
     }
     body.lang-en {
       --font-content: Georgia, 'Times New Roman', serif;
@@ -89,12 +73,13 @@
       box-shadow: inset 0 0 0 8px rgba(217,181,107,.12), 0 6px 18px rgba(83,48,25,.1);
       animation: appear .9s ease both;
     }
-    .unified-toranam { position: absolute; z-index: 3; top: 0; left: 0; display: block; width: 100%; height: auto; pointer-events: none; }
+    .unified-toranam { position: absolute; z-index: 4; top: 0; left: 0; display: block; width: 100%; height: auto; pointer-events: none; }
     .banana-plant { position: absolute; z-index: 4; bottom: 0; width: min(30%, 220px); height: 44%; object-fit: contain; object-position: center bottom; pointer-events: none; }
     .banana-plant-left { left: -38px; }
     .banana-plant-right { right: -38px; transform: scaleX(-1); }
-    .invitation-column { position: absolute; z-index: 1; top: 26%; bottom: 0; height: auto; width: auto; opacity: .43; mix-blend-mode: multiply; pointer-events: none; }
-    .column-left { left: -70px; }.column-right { right: -70px; transform: scaleX(-1); }
+    .invitation-column { position: absolute; z-index: 3; top: auto; bottom: 18%; height: 56%; width: auto; opacity: .7; mix-blend-mode: multiply; pointer-events: none; }
+    .column-left { left: 0; transform: translateX(-50%); }
+    .column-right { right: 0; transform: translateX(50%) scaleX(-1); }
     .temple-floor { position: absolute; z-index: 2; right: 0; bottom: 0; left: 0; height: 23%; overflow: hidden; background: linear-gradient(180deg, transparent 0%, rgba(137,91,52,.12) 16%, rgba(133,86,46,.75) 20%, #d7b477 23%, #9c6537 27%, #c69c5f 31%, #9b6133 100%); }
     .temple-floor::before { position: absolute; inset: 15% -15% -30%; background: repeating-linear-gradient(90deg, transparent 0 69px, rgba(255,232,179,.32) 70px, transparent 72px), repeating-linear-gradient(0deg, transparent 0 23px, rgba(89,50,28,.35) 24px, transparent 26px); border-top: 2px solid rgba(255,232,179,.75); transform: perspective(180px) rotateX(42deg) scale(1.2); transform-origin: center bottom; content: ""; }
     .temple-floor::after { position: absolute; inset: 19% 0 auto; height: 8px; background: repeating-linear-gradient(90deg, #e9d09c 0 28px, #bd8b4e 28px 32px, #f2dfb3 32px 62px); box-shadow: 0 3px 6px rgba(70,43,26,.25); content: ""; }
@@ -105,22 +90,22 @@
       font: 600 13px/1.8 var(--sans); letter-spacing: .08em;
     }
     .hero h1 {
-      margin: 5px 0 0; font-size: clamp(40px, 7vw, 66px);
-      font-family: var(--font-content); font-weight: 500; line-height: 1.12; letter-spacing: 0;
+      margin: clamp(1px, calc(.3vw + .2svh), 7px) 0 0; font-size: clamp(40px, 7vw, 66px);
+      font-family: var(--font-content); font-weight: 500; line-height: 1.08; letter-spacing: 0;
       animation: rise .9s .12s ease both;
     }
     body.lang-en .hero h1 { font: 400 clamp(50px, 8vw, 84px)/.95 var(--font-title), serif; letter-spacing: -.06em; }
-    .couple-names { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2px 14px; margin: 7px 0 0; font-size: clamp(42px, 7.2vw, 66px); font-weight: 500; line-height: 1.2; }
+    .couple-names { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2px 14px; margin: clamp(3px, calc(.4vw + .3svh), 9px) 0 0; font-size: clamp(42px, 7.2vw, 66px); font-weight: 500; line-height: 1.2; }
     .names-join { color: var(--accent); font-size: .825em; line-height: 1; }
-    .vel-mark { display: block; width: 40px; height: 54px; margin: 4px auto 0; overflow: visible; }
+    .vel-mark { display: block; width: 40px; height: 54px; margin: clamp(3px, .8svh, 8px) auto 0; overflow: visible; }
     .vel-rays, .vel-shaft, .vel-head, .vel-detail { fill: none; stroke: var(--accent); stroke-linecap: round; stroke-linejoin: round; }
     .vel-rays { stroke-width: 1.6; opacity: .9; }
     .vel-shaft, .vel-detail { stroke-width: 2.2; }
     .vel-head { fill: rgba(201,162,39,.24); stroke-width: 2.2; }
     .ampersand { display: block; margin: 6px 0; color: var(--accent); font-size: 42px; font-style: italic; }
-    .hero-copy { max-width: 530px; margin: 7px auto 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
-    .hero-date { margin: 12px 0 0; font: 600 14px/1.55 var(--sans); letter-spacing: .04em; }
-    .ornament { width: 48px; height: 1px; margin: 11px auto; background: var(--accent); }
+    .hero-copy { max-width: 530px; margin: clamp(5px, calc(.5vw + .5svh), 11px) auto 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
+    .hero-date { margin: clamp(8px, calc(.6vw + .7svh), 14px) 0 0; font: 600 14px/1.55 var(--sans); letter-spacing: .04em; }
+    .ornament { width: 48px; height: 1px; margin: clamp(6px, .9svh, 11px) auto; background: var(--accent); }
     .ritual-motifs { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(12px, 3vw, 30px); min-height: 132px; padding: 18px 10px; color: var(--teal); }
     .ritual-motifs svg { width: 45px; height: 45px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
     .ritual-motifs .motif-kolam { width: 40px; height: 40px; stroke: var(--accent); stroke-width: 1.2; }
@@ -166,8 +151,7 @@
     @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @media (min-width: 561px) and (max-width: 760px) {
       .hero { height: min(820px, calc(100svh - 78px)); min-height: 580px; padding: clamp(190px, 34vw, 250px) 74px 210px; }
-      .invitation-column { top: 25%; bottom: 0; height: auto; }
-      .column-left { left: -56px; }.column-right { right: -56px; }
+      .invitation-column { top: auto; bottom: 18%; height: 57%; }
       .banana-plant { width: 36%; height: 48%; }
       .banana-plant-left { left: -32px; }.banana-plant-right { right: -32px; }
       .couple-illustration { height: min(28vh, 230px); }
@@ -180,21 +164,20 @@
       .page-shell { width: min(100% - 12px, 920px); margin: 6px auto; }
       .topbar { min-height: 38px; padding-inline: 8px; }
       .hero { height: calc(100svh - 68px); min-height: 550px; margin: 6px; padding: clamp(122px, 35vw, 175px) 14px 190px; border-width: 5px; }
-      .invitation-column { top: 23%; bottom: 0; height: auto; }
-      .column-left { left: -64px; }.column-right { right: -64px; }
+      .invitation-column { top: auto; bottom: 8%; height: 69%; }
       .temple-floor { height: 10%; }
       .temple-floor::before { inset: 8% -22% -34%; }
       .banana-plant { bottom: 0; width: 67.5%; height: auto; }
       .banana-plant-left { left: -33.75%; }.banana-plant-right { right: -33.75%; }
       .couple-illustration { height: min(28svh, 210px); max-width: 60%; }
       .hero-content { width: calc(100% - 68px); max-width: 340px; margin-top: 0; }
+      .eyebrow { line-height: 1.4; }
       .hero h1 { font-size: clamp(36px, 10vw, 48px); }
       body.lang-en .hero h1 { font-size: clamp(46px, 13vw, 64px); }
       .couple-names { font-size: clamp(38px, 10.8vw, 52px); gap: 0 5px; }
-      .vel-mark { width: 32px; height: 43px; margin-top: 2px; }
-      .hero-copy { max-width: 340px; margin-top: 5px; font-size: 13px; line-height: 1.5; }
-      .hero-date { margin-top: 8px; font-size: 12px; }
-      .ornament { margin: 7px auto; }
+      .vel-mark { width: 32px; height: 43px; }
+      .hero-copy { max-width: 340px; font-size: 13px; line-height: 1.5; }
+      .hero-date { font-size: 12px; }
       .countdown-section { padding: 46px 4px 50px; }
       .countdown { gap: 7px; }
       .time-unit { padding: 17px 3px 14px; }
@@ -213,8 +196,8 @@
     @media (max-height: 680px) {
       .hero { padding-top: clamp(180px, 34vw, 255px); }
       .couple-illustration { height: min(26svh, 190px); }
-      .hero-copy { margin-top: 4px; line-height: 1.4; }
-      .hero-date { margin-top: 6px; }
+      .hero-copy { margin-top: clamp(3px, .6svh, 5px); line-height: 1.4; }
+      .hero-date { margin-top: clamp(4px, .8svh, 7px); }
     }
     @media (max-height: 680px) and (max-width: 560px) {
       .hero { padding-top: clamp(125px, 34vw, 165px); }
